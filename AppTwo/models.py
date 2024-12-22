@@ -8,3 +8,6 @@ class Author(models.Model):
     bio = models.CharField(max_length=200)
     date_of_birth = models.DateField(null=True)
     books_published = models.ForeignKey(Books, on_delete=models.CASCADE, related_name='authors')
+
+    def __str__(self):
+        return f'{self.id}. {self.name}'
