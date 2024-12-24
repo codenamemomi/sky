@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 
 class Authorlist(APIView):
     def get(self, request):
-        items = Author.objects.all().values()
+        items = Author.objects.all()
         serializer = AuthorSerializer(items, many= True)
         return Response(serializer.data)
     
